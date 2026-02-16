@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Workspaces - Bean & Byte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #111827);
+            color: white;
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,255,224,0.2);
+        }
+
+        .glow:hover {
+            box-shadow: 0 0 25px #00ffe0;
+            transform: translateY(-5px);
+            transition: 0.3s ease;
+        }
+
+        .hero-bg {
+            background-image: url('https://images.unsplash.com/photo-1492724441997-5dc865305da7');
+            background-size: cover;
+            background-position: center;
+        }
+    </style>
+</head>
+
+<body>
+
+<!-- HERO -->
+<section class="relative h-screen hero-bg flex items-center justify-center text-center">
+    <div class="absolute inset-0 bg-black opacity-80"></div>
+    <div class="relative z-10">
+        <h1 class="text-6xl font-bold text-[#00ffe0]">Workspaces</h1>
+        <p class="text-gray-300 mt-6">
+            Premium tech-inspired co-working experience.
+        </p>
+    </div>
+</section>
+
+<!-- FEATURES -->
+<section class="py-20 px-10">
+
+    <h2 class="text-4xl text-[#00ffe0] text-center mb-12">
+        Workspace Features
+    </h2>
+
+    <div class="grid grid-cols-3 gap-10">
+
+        <div class="glass p-8 rounded-xl glow text-center">
+            <h3 class="text-xl font-bold mb-4">Ultra Fast WiFi</h3>
+            <p class="text-gray-400">High-speed connectivity for developers.</p>
+        </div>
+
+        <div class="glass p-8 rounded-xl glow text-center">
+            <h3 class="text-xl font-bold mb-4">Tech Meetups</h3>
+            <p class="text-gray-400">Community networking events.</p>
+        </div>
+
+        <div class="glass p-8 rounded-xl glow text-center">
+            <h3 class="text-xl font-bold mb-4">Private Cabins</h3>
+            <p class="text-gray-400">Focused and distraction-free zones.</p>
+        </div>
+
+    </div>
+
+</section>
+
+</body>
+</html>

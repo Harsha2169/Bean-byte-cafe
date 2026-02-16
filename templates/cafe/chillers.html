@@ -1,0 +1,60 @@
+{% extends "base.html" %}
+{% block content %}
+
+<!-- Premium Back Button -->
+<div class="px-10 pt-6 text-left">
+    <button onclick="history.back()"
+        class="px-6 py-3 rounded-full bg-gradient-to-r 
+               from-[#00ffe0] to-[#00bfa6] 
+               text-black font-semibold 
+               shadow-lg shadow-[#00ffe0]/40
+               hover:scale-105 transition">
+        ← Back
+    </button>
+</div>
+
+<section class="py-20 text-center">
+
+    <h1 class="text-5xl font-bold text-[#00ffe0] mb-6">
+        All-Time Chillers
+    </h1>
+
+    <p class="text-gray-400 mb-12">
+        Cold, bold & refreshing.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-10 px-10">
+
+        {% for item in [
+            ("Iced Latte","https://images.unsplash.com/photo-1461023058943-07fcbe16d735?w=800","₹190"),
+            ("Cold Brew","https://images.unsplash.com/photo-1464305795204-6f5bbfc7fb81?w=800","₹200"),
+            ("Mocha Frappe","https://www.cafebustelo.com/cafebustelo/recipes/_RDP-hero-images/6944/image-thumb__6944__schema_image/spiced-mocha-frappe.83b8d0b0.jpg","₹210")
+        ] %}
+
+        <div class="card">
+            <img src="{{ item[1] }}" class="w-full h-60 object-cover">
+
+            <div class="p-6">
+                <h3 class="text-xl font-bold">{{ item[0] }}</h3>
+
+                <p class="text-[#00ffe0] font-bold mb-4">
+                    {{ item[2] }}
+                </p>
+
+                <!-- IMPORTANT PART -->
+                <button class="btn add-to-cart"
+                        data-name="{{ item[0] }}"
+                        data-price="{{ item[2] | replace('₹','') }}">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

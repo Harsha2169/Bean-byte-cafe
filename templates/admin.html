@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Admin Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 p-10">
+
+<h1 class="text-3xl font-bold mb-6">Pending Orders</h1>
+
+{% for order in orders %}
+<div class="bg-white p-4 mb-4 shadow">
+    <p><strong>Order ID:</strong> {{ order.id }}</p>
+    <p><strong>Total:</strong> ₹{{ order.total_price }}</p>
+    <p><strong>Status:</strong> {{ order.status }}</p>
+    <p><strong>Date:</strong> {{ order.created_at }}</p>
+</div>
+{% endfor %}
+
+</body>
+</html>

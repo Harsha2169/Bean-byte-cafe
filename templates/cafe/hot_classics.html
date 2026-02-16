@@ -1,0 +1,57 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="px-10 pt-6 text-left">
+    <button onclick="history.back()"
+        class="inline-flex items-center gap-2 text-[#00ffe0] hover:text-white transition text-lg font-semibold">
+        ← Back
+    </button>
+</div>
+
+<section class="py-20 text-center">
+
+    <h1 class="text-5xl font-bold text-[#00ffe0] mb-6">
+        Hot Classics
+    </h1>
+
+    <p class="text-gray-400 mb-12">
+        Signature espresso beverages.
+    </p>
+
+    <div class="grid md:grid-cols-3 gap-10 px-10">
+
+        {% for item in [
+            ("Cappuccino","https://images.unsplash.com/photo-1509042239860-f550ce710b93","150"),
+            ("Cafe Latte","https://images.unsplash.com/photo-1461023058943-07fcbe16d735","170"),
+            ("Flat White","https://images.unsplash.com/photo-1495474472287-4d71bcdd2085","160")
+        ] %}
+
+        <div class="card">
+            <img src="{{ item[1] }}" class="w-full h-60 object-cover">
+
+            <div class="p-6">
+                <h3 class="text-xl font-bold">
+                    {{ item[0] }}
+                </h3>
+
+                <p class="text-[#00ffe0] font-bold mb-4">
+                    ₹{{ item[2] }}
+                </p>
+
+                <!-- ✅ UPDATED WORKING BUTTON -->
+                <button class="btn"
+                        onclick="addToCart('{{ item[0] }}', '{{ item[2] }}')">
+                    Add to Cart
+                </button>
+
+            </div>
+        </div>
+
+        {% endfor %}
+
+    </div>
+
+</section>
+
+{% endblock %}

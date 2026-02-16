@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About - Bean & Byte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: #0f0f0f;
+            overflow-x: hidden;
+        }
+
+        .parallax-bg {
+            background-image: url('https://images.unsplash.com/photo-1519389950473-47ba0277781c');
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        .glass-card {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(0,255,224,0.2);
+        }
+
+        .glow {
+            box-shadow: 0 0 20px #00ffe0;
+        }
+    </style>
+</head>
+
+<body class="text-white">
+
+<!-- HERO SECTION -->
+<section class="relative h-screen parallax-bg flex items-center justify-center text-center">
+
+    <div class="absolute inset-0 bg-black opacity-80"></div>
+
+    <div class="relative z-10 px-10 max-w-4xl">
+        <h1 class="text-6xl font-bold text-[#00ffe0] mb-6">
+            The Mind Behind Bean & Byte
+        </h1>
+
+        <p class="text-gray-300 text-lg leading-8">
+            S. Harsha Vardhan Reddy — DevOps Engineer Intern,
+            Full-Stack Developer, Machine Learning Enthusiast.
+        </p>
+    </div>
+</section>
+
+<!-- SKILLS SECTION -->
+<section class="py-20 px-10 bg-[#111]">
+
+    <h2 class="text-4xl text-[#00ffe0] text-center mb-12">
+        Technical Expertise
+    </h2>
+
+    <div class="grid grid-cols-3 gap-10">
+
+        <div class="glass-card p-8 rounded-xl glow">
+            <h3 class="text-xl font-bold mb-4">Cloud & DevOps</h3>
+            <p class="text-gray-400">
+                AWS, Docker, Kubernetes, CI/CD, Terraform.
+            </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl glow">
+            <h3 class="text-xl font-bold mb-4">Programming</h3>
+            <p class="text-gray-400">
+                Python, Java, SQL, Flask, REST APIs.
+            </p>
+        </div>
+
+        <div class="glass-card p-8 rounded-xl glow">
+            <h3 class="text-xl font-bold mb-4">Machine Learning</h3>
+            <p class="text-gray-400">
+                NLP, OCR, Model Evaluation, Fake News Detection.
+            </p>
+        </div>
+
+    </div>
+
+</section>
+
+<!-- VISION SECTION -->
+<section class="py-20 px-10 text-center bg-black">
+
+    <h2 class="text-4xl text-[#00ffe0] mb-8">Vision</h2>
+
+    <p class="text-gray-400 max-w-3xl mx-auto leading-8">
+        Bean & Byte is more than a café — it's a collaborative
+        innovation hub where developers, designers, and entrepreneurs
+        build ideas fueled by caffeine and creativity.
+    </p>
+
+    <a href="/" class="inline-block mt-10 bg-[#00ffe0] text-black px-6 py-3 rounded-lg font-bold hover:bg-white transition">
+        Back to Home
+    </a>
+
+</section>
+
+</body>
+</html>

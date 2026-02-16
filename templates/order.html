@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Order - Bean & Byte</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <style>
+        body {
+            background: linear-gradient(135deg, #0f0f0f, #111827);
+            color: white;
+        }
+
+        .glass {
+            background: rgba(255,255,255,0.05);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(0,255,224,0.2);
+        }
+
+        .glow:hover {
+            box-shadow: 0 0 25px #00ffe0;
+            transform: translateY(-5px);
+            transition: 0.3s ease;
+        }
+
+        .cart-badge {
+            background: #00ffe0;
+            color: black;
+            padding: 5px 10px;
+            border-radius: 50%;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body class="p-10">
+
+<div class="px-10 pt-6 text-left">
+    <button onclick="history.back()"
+        class="inline-flex items-center gap-2 text-[#00ffe0] hover:text-white transition text-lg font-semibold">
+        ← Back
+    </button>
+</div>
+
+
+<!-- HEADER -->
+<div class="flex justify-between items-center mb-12">
+    <h1 class="text-5xl text-[#00ffe0] font-bold">Order Your Favorites</h1>
+    <div class="cart-badge" id="cartCount">0</div>
+</div>
+
+
+
+
+
+
+
+<!-- PRODUCTS GRID -->
+<div class="grid grid-cols-3 gap-10">
+
+    <!-- 10 PRODUCT CARDS -->
+    <!-- Repeat structure below -->
+
+    <!-- ITEM 1 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1495474472287-4d71bcdd2085"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Cappuccino</h2>
+        <p class="text-gray-400">₹150</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 2 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1509042239860-f550ce710b93"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Latte</h2>
+        <p class="text-gray-400">₹170</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 3 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1461023058943-07fcbe16d735"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Americano</h2>
+        <p class="text-gray-400">₹130</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 4 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1551024709-8f23befc6f87"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Croissant</h2>
+        <p class="text-gray-400">₹120</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 5 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1606312619344-2f05ef90b7aa"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Chocolate Lava Cake</h2>
+        <p class="text-gray-400">₹200</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 6 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1510626176961-4b57d4fbad03"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Cold Brew</h2>
+        <p class="text-gray-400">₹180</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 7 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1470337458703-46ad1756a187"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Espresso Shot</h2>
+        <p class="text-gray-400">₹100</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 8 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1447933601403-0c6688de566e"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Mocha</h2>
+        <p class="text-gray-400">₹190</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 9 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1520975916090-3105956dac38"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Veg Sandwich</h2>
+        <p class="text-gray-400">₹140</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+    <!-- ITEM 10 -->
+    <div class="glass p-6 rounded-xl glow">
+        <img src="https://images.unsplash.com/photo-1587248720327-8eb72564be1e"
+             class="h-60 w-full object-cover rounded-lg mb-4">
+        <h2 class="text-xl font-bold">Blueberry Muffin</h2>
+        <p class="text-gray-400">₹150</p>
+        <button onclick="addToCart()" class="mt-4 bg-[#00ffe0] text-black px-4 py-2 rounded-lg w-full">
+            Add to Cart
+        </button>
+    </div>
+
+</div>
+
+<script>
+let count = 0;
+function addToCart(){
+    count++;
+    document.getElementById("cartCount").innerText = count;
+}
+</script>
+
+</body>
+</html>
